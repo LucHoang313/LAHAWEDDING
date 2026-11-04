@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thiệp mời cưới · Minh Anh & Hoàng Nam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbf6f0; --surface:#fffdf9; --text:#3b2a2a; --muted:#8a7470;
+  --accent:#9b2d45; --gold:#b8913f; --line:#e8dccd;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1d1517; --surface:#271c1f; --text:#f3e8e4; --muted:#b9a39e;
+    --accent:#e07a92; --gold:#d6b25e; --line:#3d2d31; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1d1517; --surface:#271c1f; --text:#f3e8e4; --muted:#b9a39e;
+  --accent:#e07a92; --gold:#d6b25e; --line:#3d2d31; color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--text);font-family:"Be Vietnam Pro",system-ui,sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+.script{font-family:"Great Vibes","Brush Script MT",cursive;font-weight:400}
+.serif{font-family:"Playfair Display",Georgia,serif}
+section{padding:72px 22px;max-width:860px;margin:0 auto;text-align:center}
+h2{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:1.9rem;color:var(--accent);margin-bottom:10px}
+.divider{width:90px;height:1px;background:var(--gold);margin:14px auto 28px;position:relative}
+.divider::after{content:"♥";position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);background:var(--bg);color:var(--gold);padding:0 8px;font-size:.8rem}
+
+/* Hero */
+.hero{min-height:100vh;min-height:100svh;max-width:none;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 30%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 65%),var(--bg)}
+.hero .kicker{letter-spacing:.35em;text-transform:uppercase;font-size:.78rem;color:var(--muted);margin-bottom:18px}
+.hero .names{font-size:clamp(3.4rem,13vw,6.6rem);line-height:1.05;color:var(--accent)}
+.hero .and{display:block;font-size:.45em;color:var(--gold);margin:-4px 0}
+.hero .date{margin-top:26px;font-size:1.15rem;letter-spacing:.2em}
+.hero .scroll{position:absolute;bottom:26px;font-size:.75rem;letter-spacing:.3em;color:var(--muted);animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(7px)}}
+.petal{position:absolute;top:-30px;width:12px;height:16px;background:var(--accent);opacity:.35;border-radius:80% 0 80% 0;animation:fall linear infinite;pointer-events:none}
+@keyframes fall{to{transform:translate(60px,110vh) rotate(540deg)}}
+
+/* Countdown */
+.count{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.count div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 10px;min-width:76px}
+.count b{display:block;font-family:"Playfair Display",serif;font-weight:600;font-size:2rem;color:var(--accent)}
+.count span{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+
+/* Couple */
+.couple{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px 18px}
+.avatar{width:110px;height:110px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;font-size:2.8rem;color:#fff;background:linear-gradient(135deg,var(--accent),var(--gold))}
+.person h3{font-family:"Playfair Display",serif;font-weight:600;font-size:1.25rem}
+.person small{color:var(--muted);display:block;margin-bottom:8px}
+@media(max-width:560px){.couple{grid-template-columns:1fr}}
+
+/* Events */
+.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px 22px;text-align:center}
+.card .ico{font-size:2rem;margin-bottom:8px}
+.card h3{font-family:"Playfair Display",serif;font-weight:600;color:var(--accent);margin-bottom:6px}
+.card p{font-size:.95rem}
+.btn{display:inline-block;margin-top:14px;padding:10px 22px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:.85rem;letter-spacing:.08em;transition:.25s;background:transparent;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--gold);color:var(--bg)}
+
+/* RSVP */
+.rsvp{max-width:520px;margin:0 auto;display:grid;gap:14px;text-align:left}
+.rsvp label{font-size:.85rem;color:var(--muted)}
+.rsvp input,.rsvp select,.rsvp textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--text);font:inherit;font-size:.95rem}
+.rsvp input:focus,.rsvp select:focus,.rsvp textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+.rsvp .btn{background:var(--accent);border-color:var(--accent);color:#fff;justify-self:center;padding:12px 34px}
+.rsvp .btn:hover{opacity:.9;background:var(--accent);color:#fff}
+.thanks{display:none;background:var(--surface);border:1px solid var(--gold);border-radius:16px;padding:28px;max-width:520px;margin:0 auto}
+.wishes{max-width:520px;margin:26px auto 0;display:grid;gap:10px;text-align:left}
+.wish{background:var(--surface);border-left:3px solid var(--gold);border-radius:8px;padding:10px 14px;font-size:.9rem}
+.wish b{color:var(--accent);font-weight:500}
+
+footer{padding:50px 22px 70px;text-align:center;color:var(--muted)}
+footer .script{font-size:2.4rem;color:var(--accent)}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--accent);font-size:1.1rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.15);z-index:20}
+@media (prefers-reduced-motion:reduce){.petal,.scroll{animation:none}.reveal{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div id="petals" aria-hidden="true"></div>
+  <p class="kicker">Trân trọng kính mời</p>
+  <p class="kicker">Tham dự tiệc cưới
+  </p>
+  <h1 class="names script">Lê Anh<span class="and">&</span>Tuyết Hà</h1>
+  <p class="date serif">12 · 12 · 2026</p>
+  <p style="margin-top:12px;color:var(--muted)">Cùng chung vui trong ngày vui của chúng mình</p>
+  <span class="scroll">CUỘN XUỐNG ↓</span>
+</header>
+
+<section class="reveal">
+  <h2>Đếm ngược đến ngày cưới</h2>
+  <div class="divider"></div>
+  <div class="count" id="count">
+    <div><b id="d">00</b><span>Ngày</span></div>
+    <div><b id="h">00</b><span>Giờ</span></div>
+    <div><b id="m">00</b><span>Phút</span></div>
+    <div><b id="s">00</b><span>Giây</span></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Cô dâu & Chú rể</h2>
+  <div class="divider"></div>
+  <div class="couple">
+    <div class="person">
+      <div class="avatar script">M</div>
+      <h3>Nguyễn Thị Tuyết Hà</h3>
+      <small>Cô dâu · Con gái ông bà </small>
+      <p>Dịu dàng, yêu hoa và những buổi sáng chậm rãi bên tách cà phê.</p>
+    </div>
+    <div class="person">
+      <div class="avatar script">N</div>
+      <h3>Lê Xuân Phương Anh</h3>
+      <small>Chú rể · Con trai ông bà</small>
+      <p>Điềm tĩnh, hay đùa và luôn là người nắm tay cô ấy qua mọi chặng đường.</p>
+    </div>
+  </div>
+  <p style="margin-top:34px;color:var(--muted);font-style:italic">“Yêu không phải là nhìn nhau, mà là cùng nhìn về một hướng.”</p>
+</section>
+
+<section class="reveal">
+  <h2>Thông tin buổi lễ</h2>
+  <div class="divider"></div>
+  <div class="events">
+    <div class="card">
+      <div class="ico">💍</div>
+      <h3>Lễ thành hôn</h3>
+      <p><b>09:00</b> · Thứ 7, 12/12/2026<br>Tư gia nhà gái<br>Số 12, phố Hàng Bài, Hà Nội</p>
+    </div>
+    <div class="card">
+      <div class="ico">🥂</div>
+      <h3>Tiệc cưới</h3>
+      <p><b>18:00</b> · Chủ nhật, 20/12/2026<br>Trung tâm Tiệc cưới Hoa Sen<br>Số 88, đường Láng, Hà Nội</p>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ha+Noi+wedding+venue">Xem bản đồ</a>
+    </div>
+  </div>
+</section>
+
+<section class="reveal" id="rsvp-section">
+  <h2>Xác nhận tham dự</h2>
+  <div class="divider"></div>
+  <form class="rsvp" id="rsvp" novalidate>
+    <div><label for="name">Họ và tên</label><input id="name" required placeholder="Nhập tên của bạn"></div>
+    <div><label for="att">Bạn sẽ đến chứ?</label>
+      <select id="att"><option value="yes">Mình sẽ đến tham dự</option><option value="no">Rất tiếc, mình không thể đến</option></select></div>
+    <div><label for="num">Số người đi cùng</label><input id="num" type="number" min="1" max="10" value="1"></div>
+    <div><label for="msg">Lời chúc</label><textarea id="msg" rows="3" placeholder="Gửi lời chúc đến cô dâu chú rể…"></textarea></div>
+    <button class="btn" type="submit">Gửi xác nhận</button>
+  </form>
+  <div class="thanks" id="thanks"><div class="script" style="font-size:2.4rem;color:var(--accent)">Cảm ơn bạn!</div><p>Chúng mình đã nhận được phản hồi của bạn và rất mong được gặp bạn trong ngày vui.</p></div>
+  <div class="wishes" id="wishes"></div>
+</section>
+
+<footer>
+  <div class="script">Minh Anh & Hoàng Nam</div>
+  <p>Rất hân hạnh được đón tiếp bạn ♥</p>
+</footer>
+
+<button class="fab" id="theme" aria-label="Đổi giao diện sáng tối">◐</button>
+
+<script>
+// Cánh hoa rơi
+(function(){
+  var box=document.getElementById('petals');
+  for(var i=0;i<14;i++){
+    var p=document.createElement('i');p.className='petal';
+    p.style.left=(Math.random()*100)+'%';
+    p.style.animationDuration=(9+Math.random()*9)+'s';
+    p.style.animationDelay=(-Math.random()*14)+'s';
+    p.style.transform='scale('+(0.7+Math.random()*0.9)+')';
+    box.appendChild(p);
+  }
+})();
+
+// Đếm ngược (đổi ngày tại đây)
+var WEDDING=new Date('2026-12-12T09:00:00+07:00').getTime();
+function pad(n){return String(n).padStart(2,'0')}
+function tick(){
+  var diff=Math.max(0,WEDDING-Date.now());
+  document.getElementById('d').textContent=pad(Math.floor(diff/864e5));
+  document.getElementById('h').textContent=pad(Math.floor(diff/36e5)%24);
+  document.getElementById('m').textContent=pad(Math.floor(diff/6e4)%60);
+  document.getElementById('s').textContent=pad(Math.floor(diff/1e3)%60);
+}
+tick();setInterval(tick,1000);
+
+// Hiệu ứng hiện dần khi cuộn
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+// Lời chúc (lưu cục bộ trên trình duyệt của người xem)
+var wishes=[];
+try{wishes=JSON.parse(localStorage.getItem('wishes')||'[]')}catch(e){wishes=[]}
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function renderWishes(){
+  document.getElementById('wishes').innerHTML=wishes.slice(-5).reverse().map(function(w){
+    return '<div class="wish"><b>'+esc(w.name)+'</b><br>'+esc(w.msg)+'</div>';
+  }).join('');
+}
+renderWishes();
+document.getElementById('rsvp').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var name=document.getElementById('name').value.trim();
+  if(!name){document.getElementById('name').focus();return}
+  var msg=document.getElementById('msg').value.trim();
+  if(msg){wishes.push({name:name,msg:msg});try{localStorage.setItem('wishes',JSON.stringify(wishes))}catch(e){}}
+  renderWishes();
+  this.style.display='none';
+  document.getElementById('thanks').style.display='block';
+});
+
+// Đổi giao diện sáng/tối
+document.getElementById('theme').addEventListener('click',function(){
+  var root=document.documentElement;
+  var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+  root.setAttribute('data-theme',dark?'light':'dark');
+});
+</script>
+</body>
+</html>
